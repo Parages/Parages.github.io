@@ -87,7 +87,7 @@ setInterval(updateLetterSpacing, 1500);
    
 
  // 使用 setTimeout 来延迟显示弹窗
- setTimeout(function() {
+ //setTimeout(function() {
     // 创建弹窗元素
     var popup = document.createElement('div');
     popup.innerHTML = '<p>建议使用笔电/手机横屏</p>';
@@ -103,10 +103,10 @@ setInterval(updateLetterSpacing, 1500);
     
 
     // 将弹窗添加到 body 中
-    document.body.appendChild(popup);
+    //document.body.appendChild(popup);
 
     // 使用 setTimeout 再延迟三秒后移除弹窗
-    setTimeout(function() {
+    //setTimeout(function() {
         document.body.removeChild(popup);
     }, 3000);
 
