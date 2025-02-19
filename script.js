@@ -86,31 +86,7 @@ function updateLetterSpacing() {
 setInterval(updateLetterSpacing, 1500);  
    
 
- // 使用 setTimeout 来延迟显示弹窗
- //setTimeout(function() {
-    // 创建弹窗元素
-    var popup = document.createElement('div');
-    popup.innerHTML = '<p>建议使用笔电/手机横屏</p>';
-    popup.style.position = 'fixed';
-    popup.style.top = '50%';
-    popup.style.left = '50%';
-    popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.backgroundColor = 'black'; // 黑底
-            popup.style.color = 'white'; // 白字
-    popup.style.padding = '20px';
-    popup.style.border = '2px solid black';
-    popup.style.fontSize = '30px';
-    
 
-    // 将弹窗添加到 body 中
-    //document.body.appendChild(popup);
-
-    // 使用 setTimeout 再延迟三秒后移除弹窗
-    //setTimeout(function() {
-        document.body.removeChild(popup);
-    }, 3000);
-
-}, 0); // 使用0毫秒延迟确保在页面加载后立即执行
 
 
 
