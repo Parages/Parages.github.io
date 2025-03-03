@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Page</title>
+    <style>
+        /* 确保页面在不同设备上自适应 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* 日志容器 */
+        .log-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 日志条目 */
+        .log-entry {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* 图片 */
+        .log-entry img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* 文字描述 */
+        .log-entry p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* "阅读更多" 按钮 */
+        .read-more {
+            text-align: right;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* 日志加载 */
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            color: #888;
+        }
+
+        /* 滚动条 */
+        .log-container {
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="log-container" id="logContainer">
+        <!-- 日志条目将通过 JavaScript 动态添加 -->
+    </div>
+
+    <div class="loading" id="loading">
+        Loading more logs...
+    </div>
+
+    <script>
+        let logCount = 0;
+
+        // 模拟日志数据
+        const logs = [
+            {
+                imgSrc: 'https://via.placeholder.com/600x300?text=Log+Image+1',
+                intro: 'This is a short description of Log 1. It introduces the content briefly.',
+                fullText: 'This is the full content of Log 1. It goes into more detail about the topic.'
+            },
+            {
+                imgSrc: 'https://via.placeholder.com/600x300?text=Log+Image+2',
+                intro: 'This is a short description of Log 2. It introduces the content briefly.',
+                fullText: 'This is the full content of Log 2. It goes into more detail about the topic.'
+            },
+            {
+                imgSrc: 'https://via.placeholder.com/600x300?text=Log+Image+3',
+                intro: 'This is a short description of Log 3. It introduces the content briefly.',
+                fullText: 'This is the full content of Log 3. It goes into more detail about the topic.'
+            },
+            {
+                imgSrc: 'https://via.placeholder.com/600x300?text=Log+Image+4',
+                intro: 'This is a short description of Log 4. It introduces the content briefly.',
+                fullText: 'This is the full content of Log 4. It goes into more detail about the topic.'
+            },
+            {
+                imgSrc: 'https://via.placeholder.com/600x300?text=Log+Image+5',
+                intro: 'This is a short description of Log 5. It introduces the content briefly.',
+                fullText: 'This is the full content of Log 5. It goes into more detail about the topic.'
+            }
+        ];
+
+        // 加载日志条目
+        function loadLogs() {
+            const logContainer = document.getElementById('logContainer');
+            for (let i = logCount; i < logCount + 4 && i < logs.length; i++) {
+                const log = logs[i];
+
+                // 创建日志条目元素
+                const logEntry = document.createElement('div');
+                logEntry.classList.add('log-entry');
+                
+                logEntry.innerHTML = `
+                    <img src="${log.imgSrc}" alt="Log Image">
+                    <p>${log.intro}</p>
+                    <div class="read-more" onclick="showFullContent(${i})">Read More</div>
+                    <div id="fullContent${i}" style="display: none;">${log.fullText}</div>
+                `;
+                
+                logContainer.appendChild(logEntry);
+            }
+            logCount += 4;
+
+            // 隐藏加载提示
+            if (logCount >= logs.length) {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        // 显示完整内容
+        function showFullContent(index) {
+            const fullContent = document.getElementById(`fullContent${index}`);
+            fullContent.style.display = fullContent.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // 检测是否需要加载更多日志
+        window.onscroll = function() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                if (logCount < logs.length) {
+                    document.getElementById('loading').style.display = 'block';
+                    loadLogs();
+                }
+            }
+        };
+
+        // 初始化页面
+        loadLogs();
+    </script>
+</body>
+</html>

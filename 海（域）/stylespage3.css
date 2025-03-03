@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: ; /* 隐藏外部滚动条 */
+    font-family: "FangSong";
+}
+
+#centeredText {
+    text-align: center;
+    padding: 8vh;
+    font-size: clamp(0.8rem, 0.8vw, 1.5rem); /* 使用clamp使字体响应式 */
+}
+
+#particleCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.link-container {
+    display: flex;
+    gap: 20px; /* 链接之间的间距 */
+}
+
+canvas {
+    display: block;
+}
+
+a {
+    color: rgb(230, 239, 226); /* 设置链接颜色 */
+    position: relative;
+    font-size: clamp(0.8rem, 1vw, 1.2rem); /* 链接文本也设置为响应式 */
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* 图片出现在链接下方 */
+    left: 120%;
+    transform: translateX(-50%);
+    width: 3vw; /* 图片宽度 */
+    height: 40vh; /* 图片高度 */
+    background-size: cover;
+    display: none; /* 默认隐藏 */
+}
+
+a:hover::after {
+    display: block; /* 悬停时显示 */
+}
+
+/* 不同链接的不同图片路径 */
+.link1::after {
+    background-image: url('');
+}
+
+.link2::after {
+    background-image: url('image2.jpg');
+}
+
+.link3::after {
+    background-image: url('image3.jpg');
+}
