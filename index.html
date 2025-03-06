@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,8 @@
             box-sizing: border-box;
         }
 
-        body, html {
+        body,
+        html {
             width: 100%;
             height: 100%;
             font-family: Arial, sans-serif;
@@ -53,7 +55,8 @@
         .button img {
             width: 100%;
             height: auto;
-            max-width: 13px/* 控制按钮图像的最大宽度 */
+            max-width: 13px;
+            /* 控制按钮图像的最大宽度 */
         }
 
         .button:hover {
@@ -63,44 +66,49 @@
         /* 响应式设计：调整按钮和容器的排列方式 */
         @media (max-width: 768px) {
             .button-container {
-                grid-template-columns: repeat(2, 1fr); /* 中小屏幕调整为两列布局 */
+                grid-template-columns: repeat(2, 1fr);
+                /* 中小屏幕调整为两列布局 */
             }
 
             .button img {
-                max-width: 12px; /* 在小屏幕上，按钮图像稍微变小 */
+                max-width: 12px;
+                /* 在小屏幕上，按钮图像稍微变小 */
             }
         }
 
         @media (max-width: 480px) {
             .button-container {
-                grid-template-columns: 1fr; /* 极小屏幕调整为单列布局 */
+                grid-template-columns: 1fr;
+                /* 极小屏幕调整为单列布局 */
             }
 
             .button img {
-                max-width: 10px; /* 按钮图像在极小屏幕上再小一点 */
+                max-width: 10px;
+                /* 按钮图像在极小屏幕上再小一点 */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- 背景图片 -->
         <div class="background-image">
             <!-- 按钮容器 -->
             <div class="button-container">
-                <button class="button" onclick="window.location.href='list.html'">
+                <button class="button" onclick="navigate(1)">
                     <img src="b1.png" alt="作品">
                 </button>
-                <button class="button" onclick="window.location.href='list.html'">
+                <button class="button" onclick="navigate(2)">
                     <img src="b1.png" alt="Button 2">
                 </button>
-                <button class="button" onclick="window.location.href='list.html'">
+                <button class="button" onclick="navigate(3)">
                     <img src="b1.png" alt="Button 3">
                 </button>
-                <button class="button" onclick="window.location.href='list.html'">
+                <button class="button" onclick="navigate(4)">
                     <img src="b1.png" alt="Button 4">
                 </button>
-                <button class="button" onclick="window.location.href='list.html'">
+                <button class="button" onclick="navigate(5)">
                     <img src="b1.png" alt="Button 5">
                 </button>
                 <button class="button" onclick="window.location.href='intro.html'">
@@ -110,6 +118,24 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // 判断是否为移动端设备
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // 根据设备和按钮编号跳转
+        function navigate(buttonNumber) {
+            if (buttonNumber >= 1 && buttonNumber <= 5) {
+                if (isMobile()) {
+                    window.location.href = 'mobile.html'; // 移动端跳转到 mobile.html
+                } else {
+                    window.location.href = 'list.html'; // PC 端跳转到 list.html
+                }
+            }
+        }
+    </script>
+
 </body>
+
 </html>
