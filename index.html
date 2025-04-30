@@ -87,6 +87,19 @@
                 /* 按钮图像在极小屏幕上再小一点 */
             }
         }
+
+        .button-container span {
+            display: block;
+            width: fit-content; /* 背景宽度自适应文字内容 */
+            height: fit-content;
+            margin: 0 auto; /* 居中对齐 */
+            text-align: center;
+            font-size: 14px;
+            margin-top: 1px;
+            color: #fff130;
+            background-color: rgba(0, 0, 0); /* 半透明黑色背景 */
+           
+        }
     </style>
 </head>
 
@@ -96,46 +109,40 @@
         <div class="background-image">
             <!-- 按钮容器 -->
             <div class="button-container">
-                <button class="button" onclick="navigate(1)">
+                <button class="button" onclick="window.location.href='parages.html'">
                     <img src="b1.png" alt="作品">
                 </button>
-                <button class="button" onclick="navigate(2)">
+                <span>LiuChang</span>
+
+                <button class="button" onclick="window.location.href='parages.html'">
                     <img src="b1.png" alt="Button 2">
                 </button>
-                <button class="button" onclick="navigate(3)">
+                <span>pa</span>
+
+                <button class="button" onclick="window.location.href='parages.html'">
                     <img src="b1.png" alt="Button 3">
                 </button>
-                <button class="button" onclick="navigate(4)">
+                <span>ra</span>
+
+                <button class="button" onclick="window.location.href='parages.html'">
                     <img src="b1.png" alt="Button 4">
                 </button>
-                <button class="button" onclick="navigate(5)">
+                <span>g</span>
+
+                <button class="button" onclick="window.location.href='parages.html'">
                     <img src="b1.png" alt="Button 5">
                 </button>
+                <span>e</span>
+
                 <button class="button" onclick="window.location.href='intro.html'">
                     <img src="b3.png" alt="Button 6">
                 </button>
+                <span>s</span>
             </div>
         </div>
     </div>
 
-    <script>
-        // 判断是否为移动端设备
-        function isMobile() {
-            return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        // 根据设备和按钮编号跳转
-        function navigate(buttonNumber) {
-            if (buttonNumber >= 1 && buttonNumber <= 5) {
-                if (isMobile()) {
-                    window.location.href = 'mobile.html'; // 移动端跳转到 mobile.html
-                } else {
-                    window.location.href = 'list.html'; // PC 端跳转到 list.html
-                }
-            }
-        }
-    </script>
-
+    
 </body>
 
 </html>

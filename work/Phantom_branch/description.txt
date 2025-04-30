@@ -1,0 +1,3 @@
+﻿2024/11
+Technical theater in the atmosphere of urban growth.
+This is a work mourning the ghost of the demolished Traffic Management Bureau building in Xiaguan District, Nanjing. Dynamic monitoring was made using Grasshopper, and connected to a microcontroller via OSC to control the dancing of the branches.

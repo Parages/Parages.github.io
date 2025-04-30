@@ -1,0 +1,3 @@
+﻿2024/10
+Design of radio musical instrument based on fractional magnetic field. Based on the design of : https://techlib.com/electronics/allband.htm
+Cooperation with puinghardware (ID) : https://www.instagram.com/p/DEZ2z_GvBzp/
