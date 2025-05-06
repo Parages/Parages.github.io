@@ -1,0 +1,21 @@
+/* 应用自定义字体 */
+body {
+    font-family: "Courier New", monospace;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #000000;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+p {
+    color: aqua;
+    white-space: pre-wrap; /* 保留换行和空白 */
+}
+
+.images img {
+    margin: 10px 0;
+    border: 1px solid #ffea01;
+}

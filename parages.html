@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            background-image: url('bg1.png'); /* 替换为你的背景图片路径 */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #4a3c31;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 300px;
+        }
+        h1 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            background-color: black;
+        }
+        p {
+            line-height: 1;
+            font-size: 1em;
+            text-align: left;
+            margin: 5px 0;
+            color: #ffffff;
+            background-color: black;
+            white-space: pre-line; /* 保留换行符 */
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: black;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #ffffff;
+        }
+        .rotating-images {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .rotating-images img {
+            position: absolute;
+            animation: swing 3s ease-in-out infinite; /* 默认动画 */
+            transform-origin: 100% 100%; /* 设置摆动中心为右下角 */
+        }
+
+        .rotating-images img:nth-child(1) {
+            left: 70%;
+            bottom: 40px;
+            animation-delay: 0s; /* 第一个图片的动画延迟 */
+        }
+
+        .rotating-images img:nth-child(2) {
+            left: 50%;
+            bottom: 80%;
+            animation-delay: 0.5s; /* 第二个图片的动画延迟 */
+        }
+
+        .rotating-images img:nth-child(3) {
+            left: 75%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            animation-delay: 1s; /* 第三个图片的动画延迟 */
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    }
+        
+        .canvas {
+            position: relative;
+            width: 2000px; /* 画布宽度 */
+            height: 2000px; /* 画布高度 */
+            margin: 0 auto;
+          
+        }
+        .project-item {
+            position: absolute;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            font-size: 1em;
+            font-weight: bold;
+        
+            background-color: #fffb00; /* 统一背景颜色 */
+        }
+        .project-item span {
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            text-decoration: underline;
+        }
+
+        .container span {
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            text-decoration: underline;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LiuChang/Parages</h1>
+        <p>
+            Focusing on technology intervention and community building in public contexts, he has developed his practice through publishing, event planning, urban design, and soft/hardware experiment.
+            Experiment Art, Nanjing University of Art, Bachelor
+        </p>
+        
+        <p> Contact information: <a href="https://www.instagram.com/parages.liuchang/" target="_blank">Instagram</a> | parages.liuchang@gmail.com
+        </p>
+
+        <h1>Recent activities</h1>
+        <p>2025/4 Running a third space/collecive space "transparent society" in Nanjing, China.</p>
+
+        <!-- 占位符，用于插入外部内容 -->
+        <div id="project-index-container"></div>
+    </div>
+
+    <svg id="lineCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
+
+    <div class="canvas">
+        <div id="project1" class="project-item" style="top: 800px; left: 800px;">
+            <span onclick="openWindow('/work/Parages.html', '作品1', 400, 300);">Par（ages）</span>
+        </div>
+        <div id="project2" class="project-item" style="top: 200px; left: 800px;">
+            <span onclick="openWindow('/work/Phantom_branch.html', '作品2', 400, 300);">Phantom branch</span>
+        </div>
+        <div id="project3" class="project-item" style="top: 100px; left: 600px;">
+            <span onclick="openWindow('/work/Gate_three.html', '作品3', 400, 300);">Gate-three</span>
+        </div>
+        <div id="project4" class="project-item" style="top: 900px; left: 700px;"> <!-- 上移 200px -->
+            <span onclick="openWindow('/work/Stacking_channels.html', '作品4', 400, 300);">Stacking channels</span>
+        </div>
+        <div id="project5" class="project-item" style="top: 40px; left: 1100px;">
+            <span onclick="openWindow('/work/private_public_home_edible_vegetable_people.html', '作品5', 400, 300);">private、public、home、edible、vegetable、people</span>
+        </div>
+        <div id="project6" class="project-item" style="top: 500px; left: 600px;"> <!-- 上移 200px -->
+            <span onclick="openWindow('/work/Not_your_house_music.html', '作品6', 400, 300);">Not your house music</span>
+        </div>
+        <div id="project7" class="project-item" style="top: 800px; left: 900px;"> <!-- 上移 200px -->
+            <span onclick="openWindow('/work/House_of_Perception.html', '作品7', 400, 300);">House of Perception</span>
+        </div>
+        <div id="project8" class="project-item" style="top: 400px; left: 900px;">
+            <span onclick="openWindow('/work/SunCity_tre_act_play.html', '作品8', 400, 300);">SunCity tre-act-paly</span>
+        </div>
+        <div id="project9" class="project-item" style="top: 500px; left: 1100px;">
+            <span onclick="openWindow('/work/Design_v_Library.html', '作品9', 400, 300);">Design [v.] Library</span>
+        </div>
+        <div id="project10" class="project-item" style="top: 0px; left: 1500px;">
+            <span onclick="openWindow('/work/Divine_Journey.html', '作品10', 400, 300);">Divine Journey</span>
+        </div>
+        <div id="project11" class="project-item" style="top: 350px; left: 1200px;">
+            <span onclick="openWindow('/work/Transparent_Society.html', '作品10', 400, 300);">Transparent Society</span>
+        </div>
+    </div>
+
+ 
+
+    <div class="rotating-images">
+        <img src="s1.png" alt="图片1"> 
+        <img src="s2.png" alt="图片2"> 
+        <img src="s3.png" alt="图片3"> 
+        
+    </div>
+
+  <script>
+function drawLine(element, targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const lineCanvas = document.getElementById('lineCanvas');
+        lineCanvas.innerHTML = ''; // 清除之前的线条
+
+        const rect1 = element.getBoundingClientRect();
+        const rect2 = target.getBoundingClientRect();
+
+        const x1 = rect1.left + rect1.width / 2;
+        const y1 = rect1.top + rect1.height / 2;
+        const x2 = rect2.left + rect2.width / 2;
+        const y2 = rect2.top + rect2.height / 2;
+
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', 'yellow');
+        line.setAttribute('stroke-width', '2');
+        line.setAttribute('id', 'hoverLine');
+
+        lineCanvas.appendChild(line);
+    }
+
+
+    function openWindow(url, title, width, height) {
+        const left = (screen.width - width) / 2;
+        const top = (screen.height - height) / 2;
+        window.open(url, title, `width=${width},height=${height},top=${top},left=${left},resizable=yes`);
+    }
+
+    fetch('project-index.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('project-index-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading project index:', error));
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        // 检测是否为移动设备
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        if (isMobile) {
+            // 获取 project-index-container 的位置和高度
+            const projectIndexContainer = document.getElementById('project-index-container');
+            const projectIndexRect = projectIndexContainer.getBoundingClientRect();
+            const startY = projectIndexRect.bottom + window.scrollY + 500; // 距离 project-index 内容底部 20px
+            const startX = 10; // 固定横向位置
+
+            // 获取所有作品元素
+            const projectItems = document.querySelectorAll('.project-item');
+
+            // 动态调整作品位置
+            let currentY = startY; // 初始竖向位置
+            const margin = 20; // 每个作品之间的竖向间距
+
+            projectItems.forEach((item) => {
+                // 设置作品的新位置
+                item.style.position = 'absolute'; // 确保作品位置是绝对定位
+                item.style.top = `${currentY}px`;
+                item.style.left = `${startX}px`;
+
+                // 更新竖向位置
+                currentY += item.offsetHeight + margin;
+            });
+
+            // 调整画布高度以适应新布局
+            const canvas = document.querySelector('.canvas');
+            canvas.style.height = `${currentY + 50}px`; // 额外增加 50px 作为底部间距
+        }
+    });
+</script>
+
+</body>
+
+</html>
