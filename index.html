@@ -36,7 +36,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            width: 80%;
+            width: 20%;
             max-width: 1200px;
             padding: 20px;
             text-align: center;
@@ -50,13 +50,15 @@
             cursor: pointer;
             padding: 0;
             transition: transform 0.3s;
+            display: flex; /* 使用 Flexbox */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
         }
 
         .button img {
             width: 100%;
             height: auto;
-            max-width: 13px;
-            /* 控制按钮图像的最大宽度 */
+            max-width: 13px; /* 控制按钮图像的最大宽度 */
         }
 
         .button:hover {
@@ -103,46 +105,19 @@
     </style>
 </head>
 
-<body>
+<body onclick="window.location.href='parages.html'">
     <div class="container">
         <!-- 背景图片 -->
         <div class="background-image">
             <!-- 按钮容器 -->
             <div class="button-container">
-                <button class="button" onclick="window.location.href='parages.html'">
+                <button class="button">
                     <img src="b1.png" alt="作品">
                 </button>
-                <span>LiuChang</span>
-
-                <button class="button" onclick="window.location.href='parages.html'">
-                    <img src="b1.png" alt="Button 2">
-                </button>
-                <span>pa</span>
-
-                <button class="button" onclick="window.location.href='parages.html'">
-                    <img src="b1.png" alt="Button 3">
-                </button>
-                <span>ra</span>
-
-                <button class="button" onclick="window.location.href='parages.html'">
-                    <img src="b1.png" alt="Button 4">
-                </button>
-                <span>g</span>
-
-                <button class="button" onclick="window.location.href='parages.html'">
-                    <img src="b1.png" alt="Button 5">
-                </button>
-                <span>e</span>
-
-                <button class="button" onclick="window.location.href='intro.html'">
-                    <img src="b3.png" alt="Button 6">
-                </button>
-                <span>s</span>
+                <span>LiuChang Parages</span>
             </div>
         </div>
     </div>
-
-    
 </body>
 
 </html>
